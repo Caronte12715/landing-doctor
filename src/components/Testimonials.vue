@@ -1,22 +1,26 @@
 <template>
-  <section id="testimonios" class="py-24 bg-[#0F172A]">
-    <div class="max-w-6xl mx-auto px-6 relative">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Pacientes <span class="text-blue-400">Satisfechos</span></h2>
-        <p class="text-slate-400">La salud y el bienestar de nuestros pacientes es nuestra mejor carta de presentación.</p>
+  <section id="testimonios" class="py-32 bg-med-dark relative overflow-hidden">
+    <!-- Ambient Background -->
+    <div class="absolute top-1/2 left-0 w-1/2 h-full bg-med-primary/10 rounded-full mix-blend-screen filter blur-[150px] transform -translate-y-1/2 pointer-events-none"></div>
+
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+      <div class="text-center mb-20 reveal-up">
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 font-serif">Testimonios de <span class="text-med-accent">Excelencia</span></h2>
+        <div class="w-24 h-1 bg-med-accent mx-auto mb-6 opacity-50"></div>
+        <p class="text-gray-400 font-light text-lg">La salud y satisfacción de nuestros pacientes más exigentes hablan por nosotros.</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div v-for="(review, idx) in reviews" :key="idx" class="bg-slate-800 p-8 rounded-2xl border border-slate-700 relative">
-          <div class="absolute top-6 right-8 text-blue-500/20 text-6xl font-serif">"</div>
-          <p class="text-slate-300 mb-6 relative z-10 leading-relaxed">{{ review.text }}</p>
-          <div class="flex items-center gap-4">
-            <div class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-lg">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div v-for="(review, idx) in reviews" :key="idx" :class="`bg-white/5 p-10 rounded-3xl border border-white/10 relative backdrop-blur-md hover:bg-white/10 transition-colors duration-500 reveal-up delay-${(idx + 1) * 100}`">
+          <div class="absolute top-6 right-8 text-med-accent/20 text-8xl font-serif leading-none">"</div>
+          <p class="text-gray-300 mb-8 relative z-10 leading-relaxed font-light italic">"{{ review.text }}"</p>
+          <div class="flex items-center gap-5 border-t border-white/10 pt-6">
+            <div class="w-14 h-14 rounded-full bg-gradient-to-tr from-med-accent to-yellow-200 flex items-center justify-center text-med-dark font-bold text-xl shadow-lg">
               {{ review.initial }}
             </div>
             <div>
-              <h4 class="text-white font-semibold">{{ review.name }}</h4>
-              <span class="text-blue-400 text-sm">{{ review.treatment }}</span>
+              <h4 class="text-white font-bold font-serif">{{ review.name }}</h4>
+              <span class="text-med-primary text-sm uppercase tracking-wider font-semibold">{{ review.treatment }}</span>
             </div>
           </div>
         </div>

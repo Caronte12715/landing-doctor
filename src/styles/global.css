@@ -1,17 +1,17 @@
 @import "tailwindcss";
 
 @theme {
-  --color-med-primary: #0263FF;
-  --color-med-secondary: #EBF4FF;
-  --color-med-dark: #1E293B;
-  --color-med-light: #FFFFFF;
+  --color-med-primary: #0F766E; /* Teal 700 */
+  --color-med-primary-dark: #115E59; /* Teal 800 */
+  --color-med-secondary: #EBF4FF; /* Light blue accent */
+  --color-med-dark: #0f172a; /* Slate 900 */
+  --color-med-light: #FAFAFA;
   --color-med-gray: #F8FAFC;
-  --color-med-accent: #10B981;
+  --color-med-accent: #D4AF37; /* Champagne Gold */
   
-  --font-sans: 'Inter', sans-serif;
+  --font-sans: 'Outfit', sans-serif;
+  --font-serif: 'Playfair Display', serif;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 html, body {
   background-color: var(--color-med-gray);

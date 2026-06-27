@@ -1,21 +1,24 @@
 <template>
-  <section id="equipo" class="py-24 bg-white relative">
+  <section id="equipo" class="py-32 bg-white relative">
     <div class="max-w-6xl mx-auto px-6">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl md:text-5xl font-bold text-[#0F172A] mb-4">Nuestro <span class="text-blue-600">Equipo Médico</span></h2>
-        <p class="text-slate-500">Profesionales altamente calificados comprometidos con tu salud y bienestar.</p>
+      <div class="text-center mb-20 reveal-up">
+        <h2 class="text-4xl md:text-5xl font-bold text-med-dark mb-6 font-serif">Nuestra <span class="text-med-primary">Junta Médica</span></h2>
+        <div class="w-24 h-1 bg-med-accent mx-auto mb-6"></div>
+        <p class="text-gray-500 text-lg font-light">Especialistas de renombre internacional dedicados a la preservación de su salud.</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div v-for="(doctor, idx) in staff" :key="idx" class="group bg-slate-50 rounded-2xl overflow-hidden border border-slate-100 hover:shadow-xl transition-all duration-300">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div v-for="(doctor, idx) in staff" :key="idx" :class="`group bg-slate-50 rounded-2xl overflow-hidden border border-gray-100 hover:shadow-2xl hover:shadow-med-primary/20 transition-all duration-500 reveal-up delay-${(idx + 1) * 100}`">
           <div class="aspect-square overflow-hidden relative">
-            <div class="absolute inset-0 bg-blue-600/20 mix-blend-multiply opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
-            <img :src="doctor.image" :alt="doctor.name" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-gradient-to-t from-med-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 flex items-end p-6">
+              <a href="#contacto" class="text-med-accent text-sm font-bold uppercase tracking-widest hover:text-white transition-colors">Solicitar Consulta →</a>
+            </div>
+            <img :src="doctor.image" :alt="doctor.name" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 filter group-hover:contrast-125" />
           </div>
-          <div class="p-8 text-center relative bg-white transform group-hover:-translate-y-4 transition-transform duration-300 mx-4 -mt-8 rounded-xl shadow-lg border border-slate-100 z-20">
-            <h3 class="text-xl font-bold text-slate-800 mb-1">{{ doctor.name }}</h3>
-            <p class="text-blue-600 font-semibold text-sm mb-3">{{ doctor.spec }}</p>
-            <p class="text-slate-500 text-sm">{{ doctor.edu }}</p>
+          <div class="p-8 text-center relative bg-white transform group-hover:-translate-y-6 transition-transform duration-500 mx-4 -mt-10 rounded-xl shadow-lg border-t-4 border-med-accent z-20">
+            <h3 class="text-2xl font-bold text-med-dark mb-2 font-serif">{{ doctor.name }}</h3>
+            <p class="text-med-primary font-bold text-sm mb-4 uppercase tracking-wide">{{ doctor.spec }}</p>
+            <p class="text-gray-500 text-sm font-light border-t border-gray-100 pt-4">{{ doctor.edu }}</p>
           </div>
         </div>
       </div>
